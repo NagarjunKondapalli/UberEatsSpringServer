@@ -6,7 +6,6 @@ import io.swagger.Service.NotificationService;
 import io.swagger.Service.OrderService;
 import io.swagger.annotations.ApiParam;
 import io.swagger.model.Notifications;
-import io.swagger.model.Order;
 import io.swagger.model.Restaurant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,8 +1,7 @@
 package io.swagger.api;
 
 import io.swagger.annotations.*;
-
-import io.swagger.model.Order;
+import io.swagger.model.UberOrder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,5 +24,5 @@ public interface OrderApi {
             produces = { "application/xml", "application/json" },
             consumes = { "application/json", "application/xml" },
             method = RequestMethod.POST)
-    ResponseEntity<Void> addOrder(@ApiParam(value = "dish object that needs to be added to the store" ,required=true )  @Valid @RequestBody Order body);
+    ResponseEntity<Void> addOrder(@ApiParam(value = "dish object that needs to be added to the store" ,required=true )  @Valid @RequestBody UberOrder body);
 }

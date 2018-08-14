@@ -3,8 +3,7 @@ package io.swagger.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.Service.OrderService;
 import io.swagger.annotations.ApiParam;
-import io.swagger.model.Order;
-import io.swagger.model.Restaurant;
+import io.swagger.model.UberOrder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +32,9 @@ public class OrderApiController implements OrderApi {
         this.objectMapper = objectMapper;
         this.request = request;
     }
-    public ResponseEntity<Void> addOrder(@ApiParam(value = "restaurant object that needs to be added to the store" ,required=true )  @Valid @RequestBody Order body) {
+    public ResponseEntity<Void> addOrder(@ApiParam(value = "restaurant object that needs to be added to the store" ,required=true )  @Valid @RequestBody UberOrder body) {
         String accept = request.getHeader("Accept");
-        //orderService.addOrder(body);
+        orderService.addOrder(body);
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

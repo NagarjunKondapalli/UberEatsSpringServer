@@ -6,8 +6,7 @@ import io.swagger.Repo.OrderRepo;
 import io.swagger.Repo.RestaurantRepo;
 import io.swagger.model.Dishes;
 import io.swagger.model.Notifications;
-import io.swagger.model.Order;
-import io.swagger.model.Restaurant;
+import io.swagger.model.UberOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +30,7 @@ public class NotificationService {
     private Notifications notifications;
 
 
-    public void addCustomerNotification(Order order)
+    public void addCustomerNotification(UberOrder order)
     {
         Integer CustomerID=order.getCustomerId();
         notifications.setRecipientId(CustomerID);
@@ -39,7 +38,7 @@ public class NotificationService {
 
     }
 
-    public void addRestaurantNotification(Order order)
+    public void addRestaurantNotification(UberOrder order)
     {
         Integer CustomerID=order.getCustomerId();
         Integer DishID=order.getDishId();
