@@ -1,0 +1,174 @@
+package io.swagger.model;
+
+import java.sql.Timestamp;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.validation.annotation.Validated;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.*;
+
+/**
+ * Order
+ */
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-08-06T23:05:24.241Z")
+@Entity
+public class Order   {
+
+  @JsonProperty("id")
+  @Id
+  @GeneratedValue
+  private Integer id;
+
+  @JsonProperty("dishId")
+  @NotNull
+  private Integer dishId;
+
+  @JsonProperty("customerId")
+  @NotNull
+  private Integer customerId;
+
+  @JsonProperty("processingTimestamp")
+  @CreationTimestamp
+  private java.sql.Timestamp processingTimestamp;
+
+  public Order()
+  {}
+
+  public Order(Integer id, @NotNull Integer dishId, @NotNull Integer customerId, Timestamp processingTimestamp) {
+    this.id = id;
+    this.dishId = dishId;
+    this.customerId = customerId;
+    this.processingTimestamp = processingTimestamp;
+  }
+
+  public Order id(Integer id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public Order dishId(Integer dishId) {
+    this.dishId = dishId;
+    return this;
+  }
+
+  /**
+   * Get dishId
+   * @return dishId
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Integer getDishId() {
+    return dishId;
+  }
+
+  public void setDishId(Integer dishId) {
+    this.dishId = dishId;
+  }
+
+  public Order customerId(Integer customerId) {
+    this.customerId = customerId;
+    return this;
+  }
+
+  /**
+   * Get customerId
+   * @return customerId
+  **/
+  @ApiModelProperty(value = "")
+
+
+  public Integer getCustomerId() {
+    return customerId;
+  }
+
+  public void setCustomerId(Integer customerId) {
+    this.customerId = customerId;
+  }
+
+  public Order processingTimestamp(java.sql.Timestamp processingTimestamp) {
+    this.processingTimestamp = processingTimestamp;
+    return this;
+  }
+
+  public Timestamp getProcessingTimestamp() {
+    return processingTimestamp;
+  }
+
+  public void setProcessingTimestamp(java.sql.Timestamp processingTimestamp) {
+    this.processingTimestamp = processingTimestamp;
+  }
+
+  /**
+   * Get processingTimestamp
+   * @return processingTimestamp
+  **/
+
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Order order = (Order) o;
+    return Objects.equals(this.id, order.id) &&
+        Objects.equals(this.dishId, order.dishId) &&
+        Objects.equals(this.customerId, order.customerId) &&
+        Objects.equals(this.processingTimestamp, order.processingTimestamp);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, dishId, customerId, processingTimestamp);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Order {\n");
+    
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    dishId: ").append(toIndentedString(dishId)).append("\n");
+    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    sb.append("    processingTimestamp: ").append(toIndentedString(processingTimestamp)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+
